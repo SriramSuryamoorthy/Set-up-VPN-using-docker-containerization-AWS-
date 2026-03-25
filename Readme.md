@@ -77,13 +77,36 @@ cd wireguard
 
 ---
 
-### 7️⃣ Create docker-compose.yml
+## ⚙️ Docker Compose Configuration
+
+This project uses Docker Compose to deploy a WireGuard VPN server inside a container.
+
+### 🔧 Key Configuration
+
+* **Image:** linuxserver/wireguard
+* **Container Name:** wireguard
+* **Port:** 51820/UDP (used for VPN tunnel)
+* **Environment Variables:**
+
+  * `SERVERURL` → Public IP of AWS EC2 instance
+  * `SERVERPORT` → 51820
+  * `PEERS` → Number of VPN clients
+  * `PEERDNS` → DNS server (8.8.8.8)
+
+### 📦 Volume Mapping
+
+* `./config:/config` → Stores WireGuard configs
+* `/lib/modules:/lib/modules` → Required for kernel modules
+
+### 🚀 Run Command
 
 ```bash
-nano docker-compose.yml
+sudo docker-compose up -d
 ```
 
-Paste the configuration.
+### 📄 Full Configuration
+
+👉 [View docker-compose.yml](docker-compose.yml)
 
 ---
 
