@@ -7,11 +7,13 @@
 🔧 Install Docker
 
 sudo apt update
+
 sudo apt install docker.io -y
 
 ▶️ Start Docker Service
 
 sudo systemctl start docker
+
 sudo systemctl enable docker
 
 📦 Install Docker Compose
@@ -21,6 +23,7 @@ sudo apt install docker-compose -y
 📁 Create Project Folder
 
 mkdir wireguard
+
 cd wireguard
 
 📝 Create docker-compose.yml
@@ -40,7 +43,9 @@ sudo docker ps
 sudo docker logs wireguard
 
 ⛔ Stop Container
+
 sudo docker-compose down
 
 🔄 Restart Container
+
 sudo docker-compose restart
